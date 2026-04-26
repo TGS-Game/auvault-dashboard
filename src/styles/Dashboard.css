@@ -1,0 +1,30 @@
+.dashboard {
+  min-width: 1200px;
+  background: var(--color-bg);
+  padding-bottom: 64px;
+}
+
+.dashboard__main {
+  display: grid;
+  grid-template-columns: 518px 1fr;
+  gap: 38px;
+  padding: 28px 42px 0 42px;
+  max-width: 1500px;
+}
+
+.dashboard__left {
+  display: flex;
+}
+
+.dashboard__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.dashboard__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}

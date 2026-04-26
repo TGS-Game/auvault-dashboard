@@ -1,0 +1,211 @@
+.depot {
+  width: 100%;
+}
+
+.depot__title {
+  margin: 0 0 12px 0;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--color-burgundy);
+}
+
+.depot__card {
+  position: relative;
+  background: var(--gradient-depot);
+  border-radius: var(--radius-card);
+  height: 540px;
+  padding: 36px 40px 32px 40px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Top + side glossy shine overlays */
+.depot__card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.depot__card::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 30%;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* Gear watermark layer */
+.depot__card-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.04);
+}
+
+.depot__cog {
+  position: absolute;
+}
+
+.depot__cog--lg {
+  bottom: -90px;
+  right: -60px;
+}
+
+.depot__cog--sm {
+  bottom: 60px;
+  left: -40px;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.depot__rows {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 1;
+}
+
+.depot__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 22px;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.depot__label {
+  font-size: 22px;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.depot__value {
+  font-size: 18px;
+  color: var(--color-gold);
+  text-align: right;
+  font-weight: 400;
+  margin-left: auto;
+}
+
+.depot__upgrade {
+  font-family: var(--font);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 4px 18px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-gold-dark);
+  background: transparent;
+  background-image: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.depot__row--allocation {
+  position: relative;
+}
+
+.depot__info {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.depot__rule {
+  border: 0;
+  height: 1px;
+  background: rgba(209, 173, 115, 0.35);
+  margin: 4px 0;
+}
+
+.depot__allocation-bar {
+  display: flex;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.depot__alloc-seg {
+  height: 100%;
+}
+
+.depot__alloc-seg--gold {
+  background: linear-gradient(180deg, #f0d28a 0%, #c79b53 100%);
+}
+.depot__alloc-seg--silver {
+  background: linear-gradient(180deg, #e6e6e6 0%, #9e9e9e 100%);
+}
+.depot__alloc-seg--platinum {
+  background: linear-gradient(180deg, #f3f3f3 0%, #b0b6bd 100%);
+}
+.depot__alloc-seg--palladium {
+  background: linear-gradient(180deg, #cfd5d8 0%, #6c757b 100%);
+}
+
+.depot__alloc-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  color: var(--color-text-light);
+  margin-top: 4px;
+}
+
+.depot__alloc-value {
+  font-weight: 400;
+}
+
+/* Distribute the 4 allocation labels under their bar segments
+   roughly in proportion to 30/60/5/5. The flex tracks below let
+   each label sit centered above its segment. */
+.depot__alloc-values {
+  display: grid;
+  grid-template-columns: 30fr 60fr 5fr 5fr;
+  column-gap: 4px;
+}
+
+.depot__alloc-value {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.depot__edit {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.depot__edit:hover {
+  background: rgba(209, 173, 115, 0.15);
+}

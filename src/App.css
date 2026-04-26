@@ -1,0 +1,60 @@
+:root {
+  /* Brand */
+  --color-header: #272727;
+  --color-bg: #ffffff;
+  --color-card-1: #2e2e2e;
+  --color-card-2: #525050;
+  --color-depot-1: #000000;
+  --color-depot-2: #272727;
+
+  --color-burgundy: #5b242a;
+  --color-burgundy-dark: #3a1217;
+
+  --color-gold: #d1ad73;
+  --color-gold-dark: #6b593b;
+
+  --color-text: #212121;
+  --color-text-light: #ffffff;
+  --color-text-pending: #d9d9d9;
+
+  --gradient-gold: linear-gradient(72deg, #6b593b 6%, #d1ad73 60%);
+  --gradient-card: linear-gradient(110deg, #2e2e2e 51%, #525050 100%);
+  --gradient-depot: linear-gradient(54deg, #000000 6%, #272727 50%);
+  --gradient-bonus-fill: linear-gradient(90deg, #3a1217 10%, #5b242a 40%);
+  --gradient-autoswitch: radial-gradient(
+    ellipse at center,
+    #5b242a 0%,
+    #5b242a 60%,
+    #3a1217 100%
+  );
+
+  --radius-card: 10px;
+  --radius-pill: 999px;
+
+  --font: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+}

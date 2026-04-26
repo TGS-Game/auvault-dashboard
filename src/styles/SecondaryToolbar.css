@@ -1,0 +1,80 @@
+.toolbar {
+  position: relative;
+  background: var(--color-bg);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 56px 0 16px;
+}
+
+.toolbar__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 30%,
+    var(--color-gold) 70%,
+    transparent 100%
+  );
+}
+
+.toolbar__items {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.toolbar__item-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.toolbar__divider {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 50%,
+    transparent 100%
+  );
+  margin: 0 22px;
+}
+
+.toolbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 0;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.toolbar__item:hover {
+  color: var(--color-gold);
+}
+
+.toolbar__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.toolbar__label {
+  white-space: nowrap;
+}

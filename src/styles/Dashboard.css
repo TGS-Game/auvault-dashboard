@@ -1,5 +1,4 @@
 .dashboard {
-  min-width: 1200px;
   background: var(--color-bg);
   padding-bottom: 64px;
 }
@@ -10,6 +9,7 @@
   gap: 38px;
   padding: 28px 42px 0 42px;
   max-width: 1500px;
+  margin: 0 auto;
 }
 
 .dashboard__left {
@@ -27,4 +27,42 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+
+/* Tablet: 768px - 1024px — single column main, two-column inner row */
+@media (max-width: 1023.98px) {
+  .dashboard {
+    padding-bottom: 48px;
+  }
+
+  .dashboard__main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 24px 0 24px;
+  }
+
+  .dashboard__row {
+    gap: 18px;
+  }
+}
+
+/* Mobile: under 768px — fully stacked, full-width cards */
+@media (max-width: 767.98px) {
+  .dashboard {
+    padding-bottom: 32px;
+  }
+
+  .dashboard__main {
+    gap: 18px;
+    padding: 14px 14px 0 14px;
+  }
+
+  .dashboard__right {
+    gap: 18px;
+  }
+
+  .dashboard__row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }

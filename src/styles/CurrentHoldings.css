@@ -133,3 +133,79 @@
   display: inline-flex;
   align-items: center;
 }
+
+/* Tablet */
+@media (max-width: 1023.98px) {
+  .holdings__title {
+    font-size: 20px;
+  }
+
+  .holdings__card {
+    height: auto;
+    min-height: 320px;
+    padding: 24px 24px;
+  }
+
+  .holdings__metal-name {
+    font-size: 17px;
+  }
+
+  .holdings__amount {
+    font-size: 16px;
+  }
+
+  .holdings__cta {
+    min-width: 0;
+    width: 100%;
+    padding: 0 24px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .holdings__title {
+    font-size: 18px;
+  }
+
+  .holdings__card {
+    height: auto;
+    min-height: 0;
+    padding: 22px 20px;
+    border-radius: 8px;
+  }
+
+  .holdings__list {
+    gap: 14px;
+  }
+
+  .holdings__bar-icon {
+    width: 18px;
+    height: 30px;
+  }
+
+  .holdings__metal {
+    gap: 12px;
+  }
+
+  .holdings__metal-name {
+    font-size: 15px;
+  }
+
+  .holdings__amount {
+    font-size: 14px;
+  }
+
+  .holdings__pending {
+    font-size: 10px;
+  }
+
+  .holdings__cta {
+    height: 38px;
+    min-width: 0;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 14px;
+    gap: 8px;
+  }
+}

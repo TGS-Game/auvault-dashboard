@@ -122,3 +122,80 @@
   height: 100%;
   z-index: 2;
 }
+
+/* Tablet */
+@media (max-width: 1023.98px) {
+  .autoswitch__card {
+    height: 240px;
+  }
+
+  .autoswitch__content {
+    padding: 24px 28px;
+    max-width: 60%;
+  }
+
+  .autoswitch__logo {
+    width: 260px;
+  }
+
+  .autoswitch__cta {
+    height: 42px;
+    padding: 0 40px;
+    font-size: 16px;
+  }
+
+  .autoswitch__tagline {
+    font-size: 13px;
+  }
+
+  .autoswitch__art {
+    right: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .autoswitch__card {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 24px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .autoswitch__content {
+    padding: 24px 20px 8px 20px;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    gap: 14px;
+  }
+
+  .autoswitch__logo {
+    width: min(80%, 240px);
+  }
+
+  .autoswitch__cta {
+    height: 40px;
+    padding: 0 28px;
+    font-size: 14px;
+  }
+
+  .autoswitch__tagline {
+    font-size: 13px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .autoswitch__art {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    height: 140px;
+    justify-content: center;
+    margin: 4px 0 0 0;
+  }
+}
+

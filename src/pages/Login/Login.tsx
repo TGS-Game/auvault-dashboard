@@ -50,85 +50,91 @@ export default function Login() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.card}>
-        <div className={styles.brand}>
-          <img src="/assets/auvault-logo.png" alt="AuVault" />
-        </div>
-        <p className={styles.subtitle}>Staff Portal</p>
+      <div className={styles.container}>
+        <h1 className={styles.sectionTitle}>STAFF PORTAL</h1>
 
-        <form onSubmit={onSubmit} className={styles.form} noValidate>
-          <label className={styles.field}>
-            <span className={styles.fieldLabel}>Email address</span>
-            <input
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={styles.input}
-              disabled={submitting}
-            />
-          </label>
+        <div className={styles.card}>
+          <div className={styles.brand}>
+            <img src="/assets/auvault-logo.png" alt="AuVault" />
+          </div>
+          <p className={styles.tagline}>Sign in to continue</p>
 
-          <label className={styles.field}>
-            <span className={styles.fieldLabel}>Password</span>
-            <div className={styles.passwordWrap}>
+          <form onSubmit={onSubmit} className={styles.form} noValidate>
+            <label className={styles.field}>
+              <span className={styles.fieldLabel}>Email address</span>
               <input
-                type={showPassword ? 'text' : 'password'}
-                autoComplete="current-password"
+                type="email"
+                autoComplete="email"
                 required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={styles.input}
                 disabled={submitting}
               />
-              <button
-                type="button"
-                className={styles.eyeBtn}
-                onClick={() => setShowPassword((v) => !v)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
-                aria-pressed={showPassword}
-                tabIndex={-1}
-              >
-                {showPassword ? <EyeOffIcon /> : <EyeIcon />}
-              </button>
+            </label>
+
+            <label className={styles.field}>
+              <span className={styles.fieldLabel}>Password</span>
+              <div className={styles.passwordWrap}>
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.input}
+                  disabled={submitting}
+                />
+                <button
+                  type="button"
+                  className={styles.eyeBtn}
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  aria-pressed={showPassword}
+                  tabIndex={-1}
+                >
+                  {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                </button>
+              </div>
+            </label>
+
+            <div className={styles.row}>
+              <label className={styles.remember}>
+                <input
+                  type="checkbox"
+                  checked={remember}
+                  onChange={(e) => setRemember(e.target.checked)}
+                  className={styles.checkbox}
+                  disabled={submitting}
+                />
+                <span>Remember me</span>
+              </label>
             </div>
-          </label>
 
-          <label className={styles.remember}>
-            <input
-              type="checkbox"
-              checked={remember}
-              onChange={(e) => setRemember(e.target.checked)}
-              className={styles.checkbox}
+            <button
+              type="submit"
+              className={styles.submit}
               disabled={submitting}
-            />
-            <span>Remember me</span>
-          </label>
+              aria-busy={submitting}
+            >
+              {submitting ? 'Signing in…' : 'Sign In'}
+            </button>
 
-          <button
-            type="submit"
-            className={styles.submit}
-            disabled={submitting}
-            aria-busy={submitting}
-          >
-            {submitting ? 'Signing in…' : 'Sign In'}
-          </button>
+            {error && (
+              <p role="alert" className={styles.error}>
+                {error}
+              </p>
+            )}
 
-          {error && (
-            <p role="alert" className={styles.error}>
-              {error}
-            </p>
-          )}
-
-          <a
-            href="#"
-            className={styles.helpLink}
-            onClick={(e) => e.preventDefault()}
-          >
-            Need help signing in?
-          </a>
-        </form>
+            <a
+              href="#"
+              className={styles.helpLink}
+              onClick={(e) => e.preventDefault()}
+            >
+              Need help signing in?
+            </a>
+          </form>
+        </div>
       </div>
     </div>
   )

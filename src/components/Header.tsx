@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
-import { SettingsIcon, BellIcon, PersonIcon, LogoutIcon } from './icons'
+import { SettingsIcon, BellIcon, PersonIcon } from './icons'
+import { useAuth } from '../hooks/useAuth'
 import '../styles/Header.css'
 
 const NAV_ITEMS = ['HOME', 'TRANSACTION', 'VAULT', 'INSIGHT'] as const
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { logout } = useAuth()
 
   useEffect(() => {
     if (!menuOpen) return
@@ -19,6 +21,11 @@ export default function Header() {
       document.body.style.overflow = ''
     }
   }, [menuOpen])
+
+  const handleSignOut = () => {
+    setMenuOpen(false)
+    logout()
+  }
 
   return (
     <header className="header">
@@ -63,11 +70,15 @@ export default function Header() {
           <button className="header__icon-btn" aria-label="Account">
             <PersonIcon />
           </button>
-          <button className="header__icon-btn" aria-label="Logout">
-            <LogoutIcon />
-          </button>
           <button className="header__flag-btn" aria-label="Language: English">
             <img src="/assets/gb-flag.png" alt="" />
+          </button>
+          <button
+            type="button"
+            className="header__signout"
+            onClick={handleSignOut}
+          >
+            Sign Out
           </button>
         </div>
       </div>
@@ -100,13 +111,17 @@ export default function Header() {
             <button className="header__icon-btn" aria-label="Account">
               <PersonIcon />
             </button>
-            <button className="header__icon-btn" aria-label="Logout">
-              <LogoutIcon />
-            </button>
             <button className="header__flag-btn" aria-label="Language: English">
               <img src="/assets/gb-flag.png" alt="" />
             </button>
           </div>
+          <button
+            type="button"
+            className="header__signout header__signout--drawer"
+            onClick={handleSignOut}
+          >
+            Sign Out
+          </button>
         </nav>
       </div>
 
